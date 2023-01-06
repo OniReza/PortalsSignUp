@@ -19,6 +19,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import static Utility.DriverPage.driver;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -54,6 +55,11 @@ public class SmartWait extends AutomationBase {
 
     }
 
+    public void Wait()
+    {
+        new WebDriverWait(driver, 10).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    }
     public static void awaitUntilPageIsLoaded (WebDriver driver, int timer)
     {
         await().

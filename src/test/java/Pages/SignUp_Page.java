@@ -10,6 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class SignUp_Page extends CommonPageMethods {
 
     public static WebDriver driver;
@@ -108,6 +112,9 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void enterEmail() {
         email.sendKeys(Random_data.signUpEmail());
+
+
+
     }
 
     public void enterEmailnon_us() {

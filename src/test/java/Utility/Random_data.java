@@ -2,6 +2,9 @@ package Utility;
 
 import com.github.javafaker.Faker;
 
+
+import java.io.*;
+
 public class Random_data {
 
     public static Faker faker = new Faker();
@@ -9,6 +12,8 @@ public class Random_data {
    // static String ClubSwanDevNon_us = "infinity_uk_tst_aut";
    // static String ClubSwanDevNon_us = "clubswan_non-us_dev_";
     static String ClubSwanDevNon_us = "infinity_uk_tst_aut_";
+
+
 
     public static String firstName() {
         String fName = faker.name().firstName().replaceAll("'", "");
@@ -20,10 +25,25 @@ public class Random_data {
         return lName;
     }
 
-    public static String signUpEmail() {
+    public static String signUpEmail(){
+
+       // PrintWriter out = null;
+
         String email = ClubSwanDev + firstName().trim().toLowerCase() + "@mailinator.com";
         System.out.println("Email:  " + email);
+//
+//        try {
+//            out = new PrintWriter(new FileWriter("D:\\test.txt"));
+//            out.println(email);
+//            return email;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//
+//        }
+
         return email;
+
+
     }
 
     public static String signUpEmailnon_us() {
@@ -75,6 +95,8 @@ public class Random_data {
     public static String email() {
         String email = firstName().toLowerCase().trim() + "@mailinator.com";
         return email;
+
+
     }
 
     public static String bankAccNum() {

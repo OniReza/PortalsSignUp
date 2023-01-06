@@ -1,0 +1,3 @@
+1. Console 
+2. Another console output written to file
+3. Write yet another string to file

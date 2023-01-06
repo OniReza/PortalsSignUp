@@ -6,8 +6,9 @@ import io.cucumber.java.en.*;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
+import java.io.*;
 import java.util.concurrent.TimeUnit;
+
 
 public class SignUp_Step  {
     public WebDriver driver;
@@ -21,6 +22,8 @@ public class SignUp_Step  {
 
     }
 
+
+
     @Given("A valid url for desired portal")
     public void a_valid_url_for_desired_portal() {
         String URL= BaseData.BaseUrlMain();
@@ -33,8 +36,19 @@ public class SignUp_Step  {
     public void user_enters_email() {
         signuppage.enterEmail();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
+
+
+//    public void print() throws FileNotFoundException {
+//
+//        File file = new File("out.txt"); //Your file
+//        FileOutputStream fos = new FileOutputStream(file);
+//        PrintStream ps = new PrintStream(fos);
+//        System.setOut(ps);
+//        System.out.println("This goes to out.txt");
+//    }
+
+
     @When("user inputs email for non-us")
     public void user_inputs_email_non_us() throws InterruptedException {
         signuppage.enterEmailnon_us();;
@@ -237,8 +251,10 @@ public class SignUp_Step  {
     @And("checks payment confirmation message")
     public void checks_payment_confirmation_message() throws InterruptedException {
         signuppage = new SignUp_Page(driver);
-        Assert.assertTrue("Payment not sucesfull",signuppage.confirmatonCheck());
-        Thread.sleep(3000);
+        Assert.assertTrue("Payment Confirmation",signuppage.confirmatonCheck());
+
+       smartWait.waitUntilPageIsLoaded(10);
+
     }
 
     @Then("user press OK")
