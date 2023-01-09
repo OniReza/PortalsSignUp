@@ -105,6 +105,14 @@ public class SignUp_Page extends CommonPageMethods {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div/div/div/div/div/div[5]/div/button")
     public WebElement cnt;
 
+    @FindBy(xpath = "(//span[contains(text(),'Get')])[1]")
+    public WebElement getExplorerBtn;
+    @FindBy(xpath = "(//span[contains(text(),'Get')])[2]")
+    public WebElement getTitanBtn;
+    @FindBy(xpath = "(//span[contains(text(),'Get')])[3]")
+    public WebElement getSignatureBtn;
+    @FindBy(xpath = "(//span[contains(text(),'Get')])[4]")
+    public WebElement getExcellenceBtn;
     public SignUp_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
 
@@ -273,6 +281,19 @@ public class SignUp_Page extends CommonPageMethods {
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.click();
+    }
+
+    public void getExplorer() {
+        getExplorerBtn.click();
+    }
+    public void getTitan() {
+        getTitanBtn.click();
+    }
+    public void getSignature() {
+        getSignatureBtn.click();
+    }
+    public void getExcellence() {
+        getExcellenceBtn.click();
     }
 
 }

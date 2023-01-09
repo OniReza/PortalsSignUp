@@ -266,4 +266,40 @@ public class SignUp_Step  {
 
     }
 
+    @And("user selects explorer plan")
+    public void user_selects_explorer_plan() throws InterruptedException {
+        signuppage.getExplorer();
+        smartWait.waitUntilPageIsLoaded(5);
+    }
+    @When("user selects titan plan")
+    public void user_selects_titan_plan() throws InterruptedException {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        signuppage.getTitan();
+        smartWait.waitUntilPageIsLoaded(5);
+    }
+    @And("user selects signature plan")
+    public void user_selects_signature_plan() throws InterruptedException {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        signuppage.getSignature();
+        smartWait.waitUntilPageIsLoaded(5);
+    }
+    @And("user selects excellence plan")
+    public void user_selects_excellence_plan() throws InterruptedException {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        signuppage.getExcellence();
+        smartWait.waitUntilPageIsLoaded(5);
+    }
+
 }

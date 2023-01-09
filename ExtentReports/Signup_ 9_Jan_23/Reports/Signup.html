@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 4, 2023 01:23:15 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 9, 2023 09:08:55 AM</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@vip</a>
+<a class="dropdown-item" href="#">@vip2</a>
 </ul>
 </li>
 </ul>
@@ -95,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Test Signup Functionality for US Members</p>
+            <p class="name">Test Signup Functionality for Non-US Members</p>
             <p class="text-sm">
-              <span>1:23:16 PM</span> / <span>00:01:54:112</span>
+              <span>9:08:56 AM</span> / <span>00:01:49:958</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -105,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Test Signup Functionality for US Members</h5>
-<span class='badge badge-success'>01.04.2023 1:23:16 PM</span>
-<span class='badge badge-danger'>01.04.2023 1:25:10 PM</span>
-<span class='badge badge-default'>00:01:54:112</span>
+<h5 class="test-status text-fail">Test Signup Functionality for Non-US Members</h5>
+<span class='badge badge-success'>01.09.2023 9:08:56 AM</span>
+<span class='badge badge-danger'>01.09.2023 9:10:46 AM</span>
+<span class='badge badge-default'>00:01:49:958</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,7 +120,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Test Signup Functionality for VIP plan for US Members</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Test Signup Functionality for VIP plan for Non-US Members</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -133,43 +133,18 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_selects_vip_plan()">
-                <span>When user selects VIP plan</span>
+              <div class="step fail-bg" title="StepDefinations.SignUp_Step.user_selects_vip_plan_non_us()">
+                <span>When user selects VIP plan non us</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_checks_card_design()">
-                <span>And user checks card design</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.clicks_continue_again()">
-                <span>And Clicks Continue again</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_selects_payment_method_card()">
-                <span>And user selects payment method card</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
-                <span>And enter card details in payment information</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="StepDefinations.SignUp_Step.checks_payment_confirmation_message()">
-                <span>And checks payment confirmation message</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Payment Confirmation']"}
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Get VIP')]"}
   (Session info: chrome=108.0.5359.125)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SRI-LP-01054', ip: '192.168.1.154', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58117}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 63bc0f7f56a6678edde5ba5fea834909
-*** Element info: {Using=xpath, value=//span[text()='Payment Confirmation']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50345}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 642b83cf7f75aaf27dcde0614e9bf8b8
+*** Element info: {Using=xpath, value=//span[contains(text(),'Get VIP')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -186,12 +161,37 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
-	at Pages.SignUp_Page.confirmatonCheck(SignUp_Page.java:253)
-	at StepDefinations.SignUp_Step.checks_payment_confirmation_message(SignUp_Step.java:240)
-	at ✽.checks payment confirmation message(file:///E:/Work/Spring_Rain/Portal_Signup/PortalAutomation/src/test/resources/Features/SignUp/SignUp.feature:45)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at Pages.SignUp_Page.getVip(SignUp_Page.java:237)
+	at StepDefinations.SignUp_Step.user_selects_vip_plan_non_us(SignUp_Step.java:211)
+	at ✽.user selects VIP plan non us(file:///E:/Work/Spring_Rain/Portal_Signup/PortalAutomation/src/test/resources/Features/SignUp/SignUp_non_us.feature:32)
 </textarea>
       
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.SignUp_Step.user_checks_card_design()">
+                <span>And user checks card design</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.SignUp_Step.clicks_continue_again()">
+                <span>And Clicks Continue again</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.SignUp_Step.user_selects_payment_method_card()">
+                <span>And user selects payment method card</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
+                <span>And enter card details in payment information</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.SignUp_Step.checks_payment_confirmation_message()">
+                <span>And checks payment confirmation message</span>
+      <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" title="StepDefinations.SignUp_Step.user_press_ok()">
@@ -201,7 +201,7 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
               </div>
               <div class="step pass-bg" title="AFTER">
                 <span>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>Test Signup Functionality for VIP plan for US Members
+      <div>Test Signup Functionality for VIP plan for Non-US Members
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
     
@@ -257,11 +257,11 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>13:25:00 PM</td>
+<td>09:09:30 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='9'>And checks payment confirmation message</a>
+<a href="#" class="linked" test-id='1' id='4'>When user selects VIP plan non us</a>
 <div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for VIP plan for US Members.And checks payment confirmation message</span>
+<span class="badge badge-default">Test Signup Functionality for Non-US Members.Test Signup Functionality for VIP plan for Non-US Members.When user selects VIP plan non us</span>
 </div>
 </td>
 </tr>
@@ -290,12 +290,12 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@vip</p>
+<p class="name">@vip2</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@vip</h4>
+<h4>@vip2</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -309,11 +309,11 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>13:23:16 PM</td>
+<td>09:08:56 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Test Signup Functionality for VIP plan for US Members</a>
+<a href="#" class="linked" test-id='1' id='2'>Test Signup Functionality for VIP plan for Non-US Members</a>
 <div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for VIP plan for US Members</span>
+<span class="badge badge-default">Test Signup Functionality for Non-US Members.Test Signup Functionality for VIP plan for Non-US Members</span>
 </div>
 </td>
 </tr>
@@ -334,13 +334,13 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 4, 2023 01:23:15 PM</h3>
+<h3>Jan 9, 2023 09:08:55 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 4, 2023 01:25:10 PM</h3>
+<h3>Jan 9, 2023 09:10:46 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -411,10 +411,10 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='77%'><b>7</b> steps passed</small></div>
+<div><small data-tooltip='22%'><b>2</b> steps passed</small></div>
 <div>
 <small data-tooltip='11%'><b>1</b> steps failed,
-<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+<b>6</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -430,7 +430,7 @@ Session ID: 63bc0f7f56a6678edde5ba5fea834909
 </div></div>
 <script>
 var timeline = {
-"Test Signup Functionality for US Members":114.112
+"Test Signup Functionality for Non-US Members":109.958
 };
 </script>
 <div class="row">
@@ -440,7 +440,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@vip</td>
+<td>@vip2</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -467,10 +467,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 7,
+passGrandChild: 2,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 1,
+skipGrandChild: 6,
 infoGrandChild: 0,
 eventsCount: 5,
 };

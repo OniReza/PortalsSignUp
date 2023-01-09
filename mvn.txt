@@ -1,3 +1,0 @@
-mvn test -Dcucumber.options="classpath:features/login.feature"
-
-mvn verify -Dcucumber.options="classpath:features/login.feature" -Dcucumber.filter.tags="@smoke"

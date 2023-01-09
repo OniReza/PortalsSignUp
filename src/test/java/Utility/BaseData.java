@@ -52,11 +52,14 @@ public class BaseData {
     static String  owlTst= "sandbox.owl-lifestyle.com";
     static String  dreamwalletDev= "dev.dreamwallet.clubswan.com";
     static String  dreamwalletTst= "tst.dreamwallet.clubswan.com";
+    static  String Digipro="dev.lyopaymembers.com/";
+    static  String DigiproTst="sandbox.lyopaymembers.com/";
+
 
     public static String BaseUrlMain() {
         String username = "devs";
          String password = "super!power";
-         String URL = "https://" + username + ":" + password + "@" + clubswanDev;
+         String URL = "https://" + username + ":" + password + "@" + Digipro;
 //         String URL = "https://" + username + ":" + password + "@" + "dev.plcumember.com";
         return URL;
 
@@ -79,7 +82,7 @@ public class BaseData {
 
         String username = "sandbox";
         String password = "test!easy";
-        String PURL = "https://" + username + ":" + password + "@" + clubswanTst;
+        String PURL = "https://" + username + ":" + password + "@" + DigiproTst;
 //      String PURL = "https://" + username + ":" + password + "@" + "sandbox.infinityclubcardmembers.com/";
         return PURL;
     }
