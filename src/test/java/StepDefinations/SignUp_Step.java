@@ -2,12 +2,18 @@ package StepDefinations;
 
 import Pages.SignUp_Page;
 import Utility.*;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 
 import org.junit.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import java.io.*;
 import java.util.concurrent.TimeUnit;
+
+import static Utility.Hooks.getDriver;
 
 
 public class SignUp_Step  {
@@ -22,7 +28,17 @@ public class SignUp_Step  {
 
     }
 
+    @After(order=1)
+    public void takeScraenshotOnFailure(Scenario scenario) {
 
+        if (scenario.isFailed()) {
+
+            final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+
+        }
+
+    }
 
     @Given("A valid url for desired portal")
     public void a_valid_url_for_desired_portal() {
