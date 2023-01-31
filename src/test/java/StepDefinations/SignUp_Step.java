@@ -49,7 +49,7 @@ public class SignUp_Step  {
         driver.manage().window().maximize();
     }
     @When("user inputs email")
-    public void user_enters_email() {
+    public void user_enters_email() throws Exception {
         signuppage.enterEmail();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -66,13 +66,13 @@ public class SignUp_Step  {
 
 
     @When("user inputs email for non-us")
-    public void user_inputs_email_non_us() throws InterruptedException {
+    public void user_inputs_email_non_us()  throws Exception, IOException {
         signuppage.enterEmailnon_us();;
         Thread.sleep(4000);
     }
 
     @When("user inputs email for non-us member details and clicks continue")
-    public void user_inputs_email_for_non_us_member_details_and_clicks_continue() throws InterruptedException {
+    public void user_inputs_email_for_non_us_member_details_and_clicks_continue()throws Exception{
         signuppage.enterEmailnon_us();
         signuppage.continueBtnClick();
         Thread.sleep(4000);
@@ -105,7 +105,7 @@ public class SignUp_Step  {
 
 
     @When("user enters Email for non-us Accounts")
-    public void user_enters_email_non_us() {
+    public void user_enters_email_non_us() throws Exception {
         signuppage.enterEmailnon_us();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -139,7 +139,7 @@ public class SignUp_Step  {
     }
 
     @When("user selects Starter plan")
-    public void user_selects_starter_plan() throws InterruptedException {
+    public void user_selects_starter_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
@@ -151,7 +151,7 @@ public class SignUp_Step  {
         Thread.sleep(8000);
     }
     @When("user selects Premier plan")
-    public void user_selects_premier_plan() throws InterruptedException {
+    public void user_selects_premier_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
@@ -162,7 +162,7 @@ public class SignUp_Step  {
         Thread.sleep(8000);
     }
     @When("user selects VIP plan")
-    public void user_selects_vip_plan() throws InterruptedException {
+    public void user_selects_vip_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
@@ -181,7 +181,7 @@ public class SignUp_Step  {
     }
 
     @When("user selects Chairman plan")
-    public void user_selects_chairman_plan() throws InterruptedException {
+    public void user_selects_chairman_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
@@ -206,7 +206,7 @@ public class SignUp_Step  {
         smartWait.waitUntilPageIsLoaded(5);
     }
     @When("user selects Premier plan non us")
-    public void user_selects_premier_plan_non_us() throws InterruptedException {
+    public void user_selects_premier_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
@@ -217,7 +217,7 @@ public class SignUp_Step  {
         Thread.sleep(8000);
     }
     @When("user selects VIP plan non us")
-    public void user_selects_vip_plan_non_us() throws InterruptedException {
+    public void user_selects_vip_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
@@ -230,7 +230,7 @@ public class SignUp_Step  {
     }
 
     @When("user selects Chairman plan non us")
-    public void user_selects_chairman_plan_non_us() throws InterruptedException {
+    public void user_selects_chairman_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
@@ -288,7 +288,7 @@ public class SignUp_Step  {
         smartWait.waitUntilPageIsLoaded(5);
     }
     @When("user selects titan plan")
-    public void user_selects_titan_plan() throws InterruptedException {
+    public void user_selects_titan_plan() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
@@ -298,7 +298,7 @@ public class SignUp_Step  {
         smartWait.waitUntilPageIsLoaded(5);
     }
     @And("user selects signature plan")
-    public void user_selects_signature_plan() throws InterruptedException {
+    public void user_selects_signature_plan() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
@@ -308,7 +308,7 @@ public class SignUp_Step  {
         smartWait.waitUntilPageIsLoaded(5);
     }
     @And("user selects excellence plan")
-    public void user_selects_excellence_plan() throws InterruptedException {
+    public void user_selects_excellence_plan() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();

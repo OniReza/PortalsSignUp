@@ -1,23 +1,48 @@
 package Utility;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.sl.In;
 
 
 import java.io.*;
+import java.util.Properties;
 
 public class Random_data {
 
     public static Faker faker = new Faker();
-    static String ClubSwanDev = "clubswan_us_dev_";
-   // static String ClubSwanDevNon_us = "infinity_uk_tst_aut";
-   // static String ClubSwanDevNon_us = "clubswan_non-us_dev_";
-    static String ClubSwanDevNon_us = "infinity_uk_tst_aut_";
+    public static String signUpEmail() throws Exception {
 
+        Properties prop=new Properties();
+        FileInputStream file;
+        file = new FileInputStream("./src/test/resources/config.properties");
 
+        prop.load(file);
+        String TstUs=prop.getProperty("TstUsPrifix");
 
-    public static String firstName() {
+        String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
+        System.out.println("Email:  " + email);
+        return email();
+
+    }
+
+    public static String signUpEmailnon_us() throws Exception  {
+
+        Properties prop=new Properties();
+        FileInputStream file;
+        file = new FileInputStream("./src/test/resources/config.properties");
+
+        prop.load(file);
+        String TSTNon_us = prop.getProperty("TSTNon_usPrifix");
+
+        String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
+        System.out.println("Email:  " + email);
+        return email;
+    }
+
+    public static String firstName()  {
         String fName = faker.name().firstName().replaceAll("'", "");
         return fName;
+
     }
 
     public static String lastName() {
@@ -25,33 +50,25 @@ public class Random_data {
         return lName;
     }
 
-    public static String signUpEmail(){
 
-       // PrintWriter out = null;
 
-        String email = ClubSwanDev + firstName().trim().toLowerCase() + "@mailinator.com";
-        System.out.println("Email:  " + email);
+//    public static String signUpEmail(){
 //
-//        try {
-//            out = new PrintWriter(new FileWriter("D:\\test.txt"));
-//            out.println(email);
-//            return email;
-//        } catch (IOException e) {
-//            e.printStackTrace();
+//      String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
+//        System.out.println("Email:  " + email);
 //
-//        }
+//
+//        return email;
+//
+//
+//    }
 
-        return email;
-
-
-    }
-
-    public static String signUpEmailnon_us() {
-        String email = ClubSwanDevNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-       // String email = ClubSwanDevNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-        System.out.println("Email:  " + email);
-        return email;
-    }
+//    public static String signUpEmailnon_us() {
+//        String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
+//       // String email = ClubSwanDevNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
+//        System.out.println("Email:  " + email);
+//        return email;
+//    }
 
     public static String fullName() {
         String fName = faker.name().fullName().replaceAll("[^a-zA-Z]", " ");

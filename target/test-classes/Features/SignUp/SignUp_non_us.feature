@@ -47,6 +47,51 @@ Feature: Test Signup Functionality for Non-US Members
     And checks payment confirmation message
     Then user press OK
 
+  @lyopay @explorer
+  Scenario: Test Signup Functionality for Explorer plan for Non-US Members
+    When user inputs email for non-us
+    And Clicks Continue
+    And user inputs personal details for non-us members
+    And Clicks Continue
+    And Subscription page will appear
+    And user selects explorer plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @lyopay @titan
+  Scenario: Test Signup Functionality for Titan plan for Non-US Members
+    When user selects titan plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @lyopay @signature
+  Scenario: Test Signup Functionality for Signature plan for Non-US Members
+    When user selects signature plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @lyopay @excellence
+  Scenario: Test Signup Functionality for Excellence plan for Non-US Members
+    When user selects excellence plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
 
 
 

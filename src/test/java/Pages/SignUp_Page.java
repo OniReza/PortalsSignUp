@@ -86,7 +86,8 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement getStarterBtn;
     @FindBy(xpath = "//span[contains(text(),'Get Premier')]")
     public WebElement getPremierBtn;
-    @FindBy(xpath = "//span[contains(text(),'Get VIP')]")
+    //@FindBy(xpath = "//span[contains(text(),'Get VIP')]") 
+    @FindBy(xpath = "(//span[contains(text(),'Get')])[3]")
     public WebElement getVipBtn;
     @FindBy(xpath = "//span[contains(text(),'Get Chairman')]")
     public WebElement getChairmanBtn;
@@ -118,14 +119,15 @@ public class SignUp_Page extends CommonPageMethods {
 
     }
 
-    public void enterEmail() {
+    public void enterEmail() throws Exception {
         email.sendKeys(Random_data.signUpEmail());
+
 
 
 
     }
 
-    public void enterEmailnon_us() {
+    public void enterEmailnon_us()  throws Exception {
         email.sendKeys(Random_data.signUpEmailnon_us());
     }
 
@@ -176,7 +178,6 @@ public class SignUp_Page extends CommonPageMethods {
         phnBD.click();
         Thread.sleep(500);
         phnNumBox.sendKeys(Random_data.phoneNumber());
-
 
     }
 
