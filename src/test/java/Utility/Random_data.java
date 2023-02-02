@@ -21,7 +21,17 @@ public class Random_data {
 
         String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
         System.out.println("Email:  " + email);
-        return email();
+
+
+        String Data = email;
+        File files = new File("Email/Email.txt");
+        FileWriter fw = new FileWriter(files,true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(Data);
+        bw.newLine();
+        bw.close();
+
+        return email;
 
     }
 
