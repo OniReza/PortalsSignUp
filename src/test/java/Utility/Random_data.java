@@ -21,7 +21,7 @@ public class Random_data {
         System.out.println("Email:  " + email);
 
 
-        String Data = email;
+        String Data ="US: "+ email;
         File files = new File("Email/Email.txt");
         FileWriter fw = new FileWriter(files,true);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -46,7 +46,7 @@ public class Random_data {
         System.out.println("Email:  " + email);
 
 
-        String Data = email;
+        String Data ="Non US: "+ email;
         File files = new File("Email/Email.txt");
         FileWriter fw = new FileWriter(files,true);
         BufferedWriter bw = new BufferedWriter(fw);

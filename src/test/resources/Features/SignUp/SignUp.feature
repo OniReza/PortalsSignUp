@@ -15,9 +15,9 @@ Feature: Test Signup Functionality for US Members
     And checks payment confirmation message
     Then user press OK
 
-  @starter
-  Scenario: Test Signup Functionality for Starter plan for US Members
-    When user selects Starter plan
+  @plan1
+  Scenario: Test Signup Functionality for First plan for US Members
+    When user selects first plan
     And user checks card design
     And Clicks Continue again
     And user selects payment method card
@@ -25,9 +25,9 @@ Feature: Test Signup Functionality for US Members
     And checks payment confirmation message
     Then user press OK
 
-@premier
-  Scenario: Test Signup Functionality for Premier plan for US Members
-    When user selects Premier plan
+  @plan2
+  Scenario: Test Signup Functionality for Second plan for US Members
+    When user selects second plan
     And user checks card design
     And Clicks Continue again
     And user selects payment method card
@@ -35,9 +35,9 @@ Feature: Test Signup Functionality for US Members
     And checks payment confirmation message
     Then user press OK
 
-@vip
-  Scenario: Test Signup Functionality for VIP plan for US Members
-    When user selects VIP plan
+  @plan3
+  Scenario: Test Signup Functionality for Third plan for US Members
+    When user selects third plan
     And user checks card design
     And Clicks Continue again
     And user selects payment method card
@@ -45,9 +45,49 @@ Feature: Test Signup Functionality for US Members
     And checks payment confirmation message
     Then user press OK
 
-@chairman
-  Scenario: Test Signup Functionality for Chairman plan for US Members
-    When user selects Chairman plan
+  @plan4
+  Scenario: Test Signup Functionality for Fourth plan for US Members
+    When user selects fourth plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @plan5
+  Scenario: Test Signup Functionality for Fifth plan for US Members
+    When user selects fifth plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @plan6
+  Scenario: Test Signup Functionality for Sixth plan for US Members
+    When user selects sixth plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @plan7
+  Scenario: Test Signup Functionality for Seventh plan for US Members
+    When user selects seventh plan
+    And user checks card design
+    And Clicks Continue again
+    And user selects payment method card
+    And enter card details in payment information
+    And checks payment confirmation message
+    Then user press OK
+
+  @plan8
+  Scenario: Test Signup Functionality for Eighth plan for US Members
+    When user selects eighth plan
     And user checks card design
     And Clicks Continue again
     And user selects payment method card

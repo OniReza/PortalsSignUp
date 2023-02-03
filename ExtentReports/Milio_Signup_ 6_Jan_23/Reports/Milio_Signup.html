@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 3, 2023 02:50:56 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 6, 2023 11:36:34 AM</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@starterlite</a>
+<a class="dropdown-item" href="#">@chairman2</a>
 </ul>
 </li>
 </ul>
@@ -95,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Test Signup Functionality for US Members</p>
+            <p class="name">Test Signup Functionality for Non-US Members</p>
             <p class="text-sm">
-              <span>2:50:56 PM</span> / <span>00:00:21:541</span>
+              <span>11:36:34 AM</span> / <span>00:02:10:637</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -105,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Test Signup Functionality for US Members</h5>
-<span class='badge badge-success'>02.03.2023 2:50:56 PM</span>
-<span class='badge badge-danger'>02.03.2023 2:51:18 PM</span>
-<span class='badge badge-default'>00:00:21:541</span>
+<h5 class="test-status text-fail">Test Signup Functionality for Non-US Members</h5>
+<span class='badge badge-success'>01.06.2023 11:36:34 AM</span>
+<span class='badge badge-danger'>01.06.2023 11:38:45 AM</span>
+<span class='badge badge-default'>00:02:10:637</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,7 +120,10 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Test Signup Functionality for Starter Lite plan for US Members</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Test Signup Functionality for Chairman plan for Non-US Members</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
         <div class="">
@@ -130,28 +133,38 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_enters_email()">
-                <span>When user inputs email</span>
+              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_selects_chairman_plan_non_us()">
+                <span>When user selects Chairman plan non us</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.SignUp_Step.clicks_continue()">
-                <span>And Clicks Continue</span>
+              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_checks_card_design()">
+                <span>And user checks card design</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="StepDefinations.SignUp_Step.user_inputs_personal_details()">
-                <span>And user inputs personal details</span>
+              <div class="step pass-bg" title="StepDefinations.SignUp_Step.clicks_continue_again()">
+                <span>And Clicks Continue again</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinations.SignUp_Step.user_selects_payment_method_card()">
+                <span>And user selects payment method card</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
+                <span>And enter card details in payment information</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="card_number"]"}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SR-LP-01001', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Rashed\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55267}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7ac2d664ff22858108a3280e81e2289f
-*** Element info: {Using=xpath, value=//input[@name='lastName']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\Rashed\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59441}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e1a11d817f91881eecb7ecfc5f3147a1
+*** Element info: {Using=xpath, value=//*[@id="card_number"]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -169,36 +182,11 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy19.sendKeys(Unknown Source)
-	at Pages.SignUp_Page.name(SignUp_Page.java:139)
-	at StepDefinations.SignUp_Step.user_inputs_personal_details(SignUp_Step.java:82)
-	at ✽.user inputs personal details(file:///D:/Portal%20Automation/Spring%20Rain/PortalsSignUp/src/test/resources/Features/SignUp/SignUp.feature:9)
+	at Pages.PaymentGatewayPage.enterApxxCardNum(PaymentGatewayPage.java:59)
+	at StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information(PaymentGatewayStep.java:25)
+	at ✽.enter card details in payment information(file:///D:/Portal%20Automation/Spring%20Rain/PortalsSignUp/src/test/resources/Features/SignUp/SignUp_non_us.feature:46)
 </textarea>
       
-      </div>
-              </div>
-              <div class="step skip-bg" title="StepDefinations.SignUp_Step.clicks_continue()">
-                <span>And Clicks Continue</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="StepDefinations.SignUp_Step.subscription_page_will_appear()">
-                <span>And Subscription page will appear</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="StepDefinations.SignUp_Step.user_selects_starter_lite_plan()">
-                <span>And user selects Starter Lite plan</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="StepDefinations.SignUp_Step.user_selects_payment_method_card()">
-                <span>And user selects payment method card</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
-                <span>And enter card details in payment information</span>
-      <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" title="StepDefinations.SignUp_Step.checks_payment_confirmation_message()">
@@ -211,60 +199,15 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
       <div>Step skipped
       </div>
               </div>
-              <div class="step fail-bg" title="AFTER">
+              <div class="step pass-bg" title="AFTER">
                 <span>StepDefinations.SignUp_Step.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
+      <div>Test Signup Functionality for Chairman plan for Non-US Members
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SR-LP-01001', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Rashed\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55267}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7ac2d664ff22858108a3280e81e2289f
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at StepDefinations.SignUp_Step.takeScraenshotOnFailure(SignUp_Step.java:35)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step fail-bg" title="AFTER">
-                <span>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SR-LP-01001', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Rashed\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55267}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7ac2d664ff22858108a3280e81e2289f
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at StepDefinations.LoginStep.takeScraenshotOnFailure(LoginStep.java:41)
-</textarea>
-      
       </div>
               </div>
           </div>
@@ -293,15 +236,15 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>3</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.NoSuchWindowException</p>
-<p class="duration text-sm">3 tests</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchWindowException</h4>
-<span status="fail" class='badge log badge-danger'>3 failed</span>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -314,31 +257,11 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:51:13 PM</td>
+<td>11:37:42 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='6'>And user inputs personal details</a>
+<a href="#" class="linked" test-id='1' id='8'>And enter card details in payment information</a>
 <div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for Starter Lite plan for US Members.And user inputs personal details</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:51:18 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='14'>StepDefinations.SignUp_Step.takeScraenshotOnFailure(io.cucumber.java.Scenario)</a>
-<div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for Starter Lite plan for US Members.StepDefinations.SignUp_Step.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:51:18 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='15'>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</a>
-<div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for Starter Lite plan for US Members.StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
+<span class="badge badge-default">Test Signup Functionality for Non-US Members.Test Signup Functionality for Chairman plan for Non-US Members.And enter card details in payment information</span>
 </div>
 </td>
 </tr>
@@ -367,12 +290,12 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@starterlite</p>
+<p class="name">@chairman2</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@starterlite</h4>
+<h4>@chairman2</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -386,11 +309,11 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:50:56 PM</td>
+<td>11:36:34 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Test Signup Functionality for Starter Lite plan for US Members</a>
+<a href="#" class="linked" test-id='1' id='2'>Test Signup Functionality for Chairman plan for Non-US Members</a>
 <div class="">
-<span class="badge badge-default">Test Signup Functionality for US Members.Test Signup Functionality for Starter Lite plan for US Members</span>
+<span class="badge badge-default">Test Signup Functionality for Non-US Members.Test Signup Functionality for Chairman plan for Non-US Members</span>
 </div>
 </td>
 </tr>
@@ -411,13 +334,13 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 3, 2023 02:50:56 PM</h3>
+<h3>Jan 6, 2023 11:36:34 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 3, 2023 02:51:18 PM</h3>
+<h3>Jan 6, 2023 11:38:45 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -488,10 +411,10 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='23%'><b>3</b> steps passed</small></div>
+<div><small data-tooltip='66%'><b>6</b> steps passed</small></div>
 <div>
-<small data-tooltip='23%'><b>3</b> steps failed,
-<b>7</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='11%'><b>1</b> steps failed,
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -507,7 +430,7 @@ Session ID: 7ac2d664ff22858108a3280e81e2289f
 </div></div>
 <script>
 var timeline = {
-"Test Signup Functionality for US Members":21.541
+"Test Signup Functionality for Non-US Members":130.637
 };
 </script>
 <div class="row">
@@ -517,7 +440,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@starterlite</td>
+<td>@chairman2</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -544,10 +467,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 3,
-failGrandChild: 3,
+passGrandChild: 6,
+failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 7,
+skipGrandChild: 2,
 infoGrandChild: 0,
 eventsCount: 5,
 };

@@ -3,16 +3,11 @@ package Pages;
 import Utility.CommonPage;
 import Utility.CommonPageMethods;
 import Utility.Random_data;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class SignUp_Page extends CommonPageMethods {
 
@@ -23,8 +18,8 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement countryDropdown;
     @FindBy(xpath = "//li[contains(text(),'United States of America')]")
     public WebElement usa;
-    @FindBy(xpath = "//li[contains(text(),'United Kingdom')]")
-    public WebElement uk;
+    @FindBy(xpath = "//li[contains(text(),'Bangladesh')]")
+    public WebElement bd;
     @FindBy(xpath = "//input[@name='firstName']")
     public WebElement firstName;
     @FindBy(xpath = "//input[@name='lastName']")
@@ -81,15 +76,22 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement getLiteBtn;
     @FindBy(xpath = "//span[contains(text(),'I want starter lite')]")
     public WebElement iWantLiteBtn;
-    @FindBy(xpath = "//span[contains(text(),'Get Starter')]")
-    public WebElement getStarterBtn;
-    @FindBy(xpath = "//span[contains(text(),'Get Premier')]")
-    public WebElement getPremierBtn;
-    //@FindBy(xpath = "//span[contains(text(),'Get VIP')]") 
-    @FindBy(xpath = "(//span[contains(text(),'Get')])[3]")
-    public WebElement getVipBtn;
-    @FindBy(xpath = "//span[contains(text(),'Get Chairman')]")
-    public WebElement getChairmanBtn;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[1]")
+    public WebElement getPlan1;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[2]")
+    public WebElement getPlan2;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[3]")
+    public WebElement getPlan3;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[4]")
+    public WebElement getPlan4;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[5]")
+    public WebElement getPlan5;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[6]")
+    public WebElement getPlan6;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[7]")
+    public WebElement getPlan7;
+    @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[8]")
+    public WebElement getPlan8;
     @FindBy(xpath = "//*[@id=\"slide1\"]")
     public WebElement cardImage;
     @FindBy(xpath = "//div[@role='button' and text()='Select']")
@@ -100,28 +102,18 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement okBtn;
     @FindBy(xpath = "//span[text()='Payment Confirmation']")
     public WebElement paymentConfirmation;
-    @FindBy(xpath = "//h6[text()='Email Verification']")
-    public WebElement emailVerPage;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div/div/div/div/div/div[5]/div/button")
     public WebElement cnt;
-    @FindBy(xpath = "(//span[contains(text(),'Get')])[1]")
-    public WebElement getExplorerBtn;
-    @FindBy(xpath = "(//span[contains(text(),'Get')])[2]")
-    public WebElement getTitanBtn;
-    @FindBy(xpath = "(//span[contains(text(),'Get')])[3]")
-    public WebElement getSignatureBtn;
-    @FindBy(xpath = "(//span[contains(text(),'Get')])[4]")
-    public WebElement getExcellenceBtn;
+
     public SignUp_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
-
     }
 
     public void enterEmail() throws Exception {
         email.sendKeys(Random_data.signUpEmail());
     }
 
-    public void enterEmailnon_us()  throws Exception {
+    public void enterEmailnon_us() throws Exception {
         email.sendKeys(Random_data.signUpEmailnon_us());
     }
 
@@ -129,7 +121,7 @@ public class SignUp_Page extends CommonPageMethods {
         continueBtn.click();
     }
 
-    public void residentCountry() throws InterruptedException {
+    public void residentCountry() throws InterruptedException, IOException {
         countryDropdown.click();
         Thread.sleep(500);
         click(usa);
@@ -138,7 +130,7 @@ public class SignUp_Page extends CommonPageMethods {
     public void residentCountrynon_us() throws InterruptedException {
         countryDropdown.click();
         Thread.sleep(500);
-        click(uk);
+        click(bd);
     }
 
     public void name() throws InterruptedException {
@@ -187,7 +179,6 @@ public class SignUp_Page extends CommonPageMethods {
         Thread.sleep(1000);
     }
 
-
     public void dob() throws InterruptedException {
 
         datePicker.click();
@@ -213,7 +204,6 @@ public class SignUp_Page extends CommonPageMethods {
 
     }
 
-
     public void scrollbtn() {
         carosol.click();
     }
@@ -224,28 +214,72 @@ public class SignUp_Page extends CommonPageMethods {
         iWantLiteBtn.click();
     }
 
-    public void getStarter() {
-        getStarterBtn.click();
+    public void getFirstPlan() {
+        getPlan1.click();
     }
 
-    public void getPremier() {
-        getPremierBtn.click();
+    public void getSecondPlan() throws IOException {
+        getPlan2.click();
     }
 
-    public boolean vipCheck() {
-        return getVipBtn.isDisplayed();
+    public void getThirdPlan() {
+        getPlan3.click();
     }
 
-    public void getVip() {
-        getVipBtn.click();
+    public void getFourthPlan() {
+        getPlan4.click();
     }
 
-    public boolean chairmanCheck() {
-        return getChairmanBtn.isDisplayed();
+    public void getFifthPlan() {
+        try {
+            scrollbtn();
+            Thread.sleep(1000);
+            getPlan5.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No more plans");
+            getPlan5.click();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void getChairman() {
-        getChairmanBtn.click();
+    public void getSixthPlan() {
+        try {
+            scrollbtn();
+            Thread.sleep(1000);
+            getPlan6.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No more plans");
+            getPlan6.click();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void getSeventhPlan() {
+        try {
+            scrollbtn();
+            Thread.sleep(1000);
+            getPlan7.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No more plans");
+            getPlan7.click();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void getEighthPlan() {
+        try {
+            scrollbtn();
+            Thread.sleep(1000);
+            getPlan8.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No more plans");
+            getPlan8.click();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean cardImageCheck() {
@@ -256,7 +290,6 @@ public class SignUp_Page extends CommonPageMethods {
         paymentMthdDropdown.click();
         Thread.sleep(1000);
         card.click();
-
     }
 
     public boolean confirmatonCheck() {
@@ -267,28 +300,11 @@ public class SignUp_Page extends CommonPageMethods {
         okBtn.click();
     }
 
-    public boolean emailVerificationPage() {
-        return emailVerPage.isDisplayed();
-    }
-
     public void cntc() {
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.click();
-    }
-
-    public void getExplorer() {
-        getExplorerBtn.click();
-    }
-    public void getTitan() {
-        getTitanBtn.click();
-    }
-    public void getSignature() {
-        getSignatureBtn.click();
-    }
-    public void getExcellence() {
-        getExcellenceBtn.click();
     }
 
 }

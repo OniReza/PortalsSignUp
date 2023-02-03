@@ -10,44 +10,42 @@ import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 import static Utility.Hooks.getDriver;
 
 
-public class SignUp_Step  {
+public class SignUp_Step {
     public WebDriver driver;
     SignUp_Page signuppage;
     SmartWait smartWait = new SmartWait();
 
-    public SignUp_Step()
-    {
-        this.driver= Hooks.getDriver();
-        signuppage=new SignUp_Page(driver);
-
+    public SignUp_Step() {
+        this.driver = Hooks.getDriver();
+        signuppage = new SignUp_Page(driver);
     }
 
-    @After(order=1)
+    @After(order = 1)
     public void takeScraenshotOnFailure(Scenario scenario) {
 
         if (scenario.isFailed()) {
 
             final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
-
         }
-
     }
 
     @Given("A valid url for desired portal")
     public void a_valid_url_for_desired_portal() {
-        String URL= BaseData.BaseUrlMain();
-        String PURL=BaseData.BasePopUpUrl();
+        String URL = BaseData.BaseUrlMain();
+        String PURL = BaseData.BasePopUpUrl();
         driver.get(PURL);
         driver.get(URL);
         driver.manage().window().maximize();
     }
+
     @When("user inputs email")
     public void user_enters_email() throws Exception {
         signuppage.enterEmail();
@@ -66,20 +64,20 @@ public class SignUp_Step  {
 
 
     @When("user inputs email for non-us")
-    public void user_inputs_email_non_us()  throws Exception, IOException {
-        signuppage.enterEmailnon_us();;
+    public void user_inputs_email_non_us() throws Exception, IOException {
+        signuppage.enterEmailnon_us();
         Thread.sleep(4000);
     }
 
     @When("user inputs email for non-us member details and clicks continue")
-    public void user_inputs_email_for_non_us_member_details_and_clicks_continue()throws Exception{
+    public void user_inputs_email_for_non_us_member_details_and_clicks_continue() throws Exception {
         signuppage.enterEmailnon_us();
         signuppage.continueBtnClick();
         Thread.sleep(4000);
     }
 
     @And("user inputs personal details")
-    public void user_inputs_personal_details() throws InterruptedException {
+    public void user_inputs_personal_details() throws InterruptedException, IOException {
         signuppage.residentCountry();
         signuppage.name();
         signuppage.address();
@@ -102,15 +100,11 @@ public class SignUp_Step  {
         signuppage.checkBoxesclick();
     }
 
-
-
     @When("user enters Email for non-us Accounts")
     public void user_enters_email_non_us() throws Exception {
         signuppage.enterEmailnon_us();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
-
 
     @And("Clicks Continue")
     public void clicks_continue() throws InterruptedException {
@@ -126,7 +120,7 @@ public class SignUp_Step  {
     @And("Subscription page will appear")
     public void subscription_page_will_appear() throws InterruptedException {
         Thread.sleep(5000);
-        Assert.assertTrue("Subscription page not appeared",signuppage.subscriptionPageCheck());
+        Assert.assertTrue("Subscription page not appeared", signuppage.subscriptionPageCheck());
 
     }
 
@@ -138,110 +132,193 @@ public class SignUp_Step  {
         Thread.sleep(3000);
     }
 
-    @When("user selects Starter plan")
-    public void user_selects_starter_plan() throws Exception {
+    @When("user selects first plan")
+    public void user_selects_first_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
-        signuppage.getStarter();
+        signuppage.getFirstPlan();
+        Thread.sleep(8000);
+    }
 
-        Thread.sleep(8000);
-    }
-    @When("user selects Premier plan")
-    public void user_selects_premier_plan() throws Exception {
+    @When("user selects second plan")
+    public void user_selects_second_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         subscription_page_will_appear();
         clicks_continue();
         smartWait.waitUntilPageIsLoaded(5);
-        signuppage.getPremier();
+        signuppage.getSecondPlan();
         Thread.sleep(8000);
     }
-    @When("user selects VIP plan")
-    public void user_selects_vip_plan() throws Exception {
+
+    @When("user selects third plan")
+    public void user_selects_third_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
-        if (!signuppage.vipCheck()){
-            signuppage.scrollbtn();
-            Thread.sleep(1000);
-            signuppage.getVip();
-        }
-        else {
-            signuppage.getVip();
-        }
+        signuppage.getThirdPlan();
         Thread.sleep(2000);
     }
 
-    @When("user selects Chairman plan")
-    public void user_selects_chairman_plan() throws Exception {
+    @When("user selects fourth plan")
+    public void user_selects_fourth_plan() throws Exception {
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
-        if (!signuppage.chairmanCheck()){
-            signuppage.scrollbtn();
-            Thread.sleep(1000);
-            signuppage.getChairman();
-        }
-        else {
-            signuppage.getChairman();
-        }
+        signuppage.getFourthPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects fifth plan")
+    public void user_selects_fifth_plan() throws Exception {
+        user_enters_email();
+        signuppage.continueBtnClick();
+        user_inputs_personal_details();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getFifthPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects sixth plan")
+    public void user_selects_sixth_plan() throws Exception {
+        user_enters_email();
+        signuppage.continueBtnClick();
+        user_inputs_personal_details();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getSixthPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects seventh plan")
+    public void user_selects_seventh_plan() throws Exception {
+        user_enters_email();
+        signuppage.continueBtnClick();
+        user_inputs_personal_details();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getSeventhPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects eighth plan")
+    public void user_selects_eigth_plan() throws Exception {
+        user_enters_email();
+        signuppage.continueBtnClick();
+        user_inputs_personal_details();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getEighthPlan();
         Thread.sleep(2000);
     }
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++Non US++++++++++++++++++++++++++++++++++++++++++++++++
-    @When("user selects Starter plan non us")
-    public void user_selects_starter_plan_non_us() throws InterruptedException {
-        signuppage.getStarter();
+    @When("user selects first plan non-us")
+    public void user_selects_first_plan_non_us() throws InterruptedException {
+        signuppage.getFirstPlan();
         smartWait.waitUntilPageIsLoaded(5);
     }
-    @When("user selects Premier plan non us")
-    public void user_selects_premier_plan_non_us() throws Exception {
+
+    @When("user selects second plan non-us")
+    public void user_selects_second_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
-        signuppage.getPremier();
+        signuppage.getSecondPlan();
         Thread.sleep(8000);
     }
-    @When("user selects VIP plan non us")
-    public void user_selects_vip_plan_non_us() throws Exception {
+
+    @When("user selects third plan non-us")
+    public void user_selects_third_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(10);
-            signuppage.getVip();
+        signuppage.getThirdPlan();
 
         Thread.sleep(2000);
     }
 
-    @When("user selects Chairman plan non us")
-    public void user_selects_chairman_plan_non_us() throws Exception {
+    @When("user selects fourth plan non-us")
+    public void user_selects_fourth_plan_non_us() throws Exception {
         user_inputs_email_non_us();
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
-            signuppage.getChairman();
-
+        signuppage.getFourthPlan();
         Thread.sleep(2000);
     }
 
+    @When("user selects fifth plan non-us")
+    public void user_selects_fifth_plan_non_us() throws Exception {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getFifthPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects sixth plan non-us")
+    public void user_selects_sixth_plan_non_us() throws Exception {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getSixthPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects seventh plan non-us")
+    public void user_selects_seventh_plan_non_us() throws Exception {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getSeventhPlan();
+        Thread.sleep(2000);
+    }
+
+    @When("user selects eighth plan non-us")
+    public void user_selects_eighth_plan_non_us() throws Exception {
+        user_inputs_email_non_us();
+        clicks_continue();
+        user_inputs_personal_details_for_non_us_members();
+        clicks_continue();
+        subscription_page_will_appear();
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getEighthPlan();
+        Thread.sleep(2000);
+    }
 
     @And("user checks card design")
     public void user_checks_card_design() throws InterruptedException {
@@ -249,6 +326,7 @@ public class SignUp_Step  {
         smartWait.waitUntilPageIsLoaded(5);
         Assert.assertTrue("Card Image didn't appear", signuppage.cardImageCheck());
     }
+
     @And("Clicks Continue again")
     public void clicks_continue_again() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(5);
@@ -261,61 +339,22 @@ public class SignUp_Step  {
         //signuppage = new SignUp_Page(driver);
         signuppage.cardPayment();
         smartWait.waitUntilPageIsLoaded(10);
-
     }
 
     @And("checks payment confirmation message")
     public void checks_payment_confirmation_message() throws InterruptedException {
         signuppage = new SignUp_Page(driver);
-        Assert.assertTrue("Payment Confirmation",signuppage.confirmatonCheck());
-
-       smartWait.waitUntilPageIsLoaded(10);
-
+        Assert.assertTrue("Payment Confirmation", signuppage.confirmatonCheck());
+        smartWait.waitUntilPageIsLoaded(10);
     }
 
     @Then("user press OK")
     public void user_press_ok() {
         signuppage = new SignUp_Page(driver);
         signuppage.okBtnClick();
-        driver.manage().timeouts().implicitlyWait(300,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
         smartWait.waitUntilPageIsLoaded(5);
+    }
 
-    }
-
-    @And("user selects explorer plan")
-    public void user_selects_explorer_plan() throws InterruptedException {
-        signuppage.getExplorer();
-        smartWait.waitUntilPageIsLoaded(5);
-    }
-    @When("user selects titan plan")
-    public void user_selects_titan_plan() throws Exception {
-        user_inputs_email_non_us();
-        clicks_continue();
-        user_inputs_personal_details_for_non_us_members();
-        clicks_continue();
-        subscription_page_will_appear();
-        signuppage.getTitan();
-        smartWait.waitUntilPageIsLoaded(5);
-    }
-    @And("user selects signature plan")
-    public void user_selects_signature_plan() throws Exception {
-        user_inputs_email_non_us();
-        clicks_continue();
-        user_inputs_personal_details_for_non_us_members();
-        clicks_continue();
-        subscription_page_will_appear();
-        signuppage.getSignature();
-        smartWait.waitUntilPageIsLoaded(5);
-    }
-    @And("user selects excellence plan")
-    public void user_selects_excellence_plan() throws Exception {
-        user_inputs_email_non_us();
-        clicks_continue();
-        user_inputs_personal_details_for_non_us_members();
-        clicks_continue();
-        subscription_page_will_appear();
-        signuppage.getExcellence();
-        smartWait.waitUntilPageIsLoaded(5);
-    }
 
 }
