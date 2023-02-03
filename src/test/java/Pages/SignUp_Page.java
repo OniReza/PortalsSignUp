@@ -72,7 +72,6 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement phnValidationmsg;
     @FindBy(xpath = "//span[contains(text(),'Phone number required.')]")
     public WebElement phnNumReqired;
-
     @FindBy(xpath = "//span[contains(text(),'Personal Details')]")
     public WebElement personalDetails;
     //Plans For Clubswan us, non-us
@@ -105,7 +104,6 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement emailVerPage;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div/div/div/div/div/div[5]/div/button")
     public WebElement cnt;
-
     @FindBy(xpath = "(//span[contains(text(),'Get')])[1]")
     public WebElement getExplorerBtn;
     @FindBy(xpath = "(//span[contains(text(),'Get')])[2]")
@@ -121,10 +119,6 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void enterEmail() throws Exception {
         email.sendKeys(Random_data.signUpEmail());
-
-
-
-
     }
 
     public void enterEmailnon_us()  throws Exception {

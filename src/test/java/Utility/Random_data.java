@@ -2,8 +2,6 @@ package Utility;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.sl.In;
-
-
 import java.io.*;
 import java.util.Properties;
 
@@ -46,6 +44,16 @@ public class Random_data {
 
         String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
         System.out.println("Email:  " + email);
+
+
+        String Data = email;
+        File files = new File("Email/Email.txt");
+        FileWriter fw = new FileWriter(files,true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(Data);
+        bw.newLine();
+        bw.close();
+
         return email;
     }
 
@@ -59,26 +67,6 @@ public class Random_data {
         String lName = faker.name().lastName().replaceAll("'", "");
         return lName;
     }
-
-
-
-//    public static String signUpEmail(){
-//
-//      String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
-//        System.out.println("Email:  " + email);
-//
-//
-//        return email;
-//
-//
-//    }
-
-//    public static String signUpEmailnon_us() {
-//        String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-//       // String email = ClubSwanDevNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-//        System.out.println("Email:  " + email);
-//        return email;
-//    }
 
     public static String fullName() {
         String fName = faker.name().fullName().replaceAll("[^a-zA-Z]", " ");

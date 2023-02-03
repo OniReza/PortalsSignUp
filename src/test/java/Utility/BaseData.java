@@ -41,8 +41,7 @@ public class BaseData {
         String x= TOTP.getOTP(hexKey);
         System.out.println("Totp: "+ TOTP.getOTP(hexKey));
         return TOTP.getOTP(hexKey);
-    }
-    //Apexx
+    }    //Apexx
     public static String cardNumber() {
         String number = "5200000000001005";
         //String number = "4456530000001005";
