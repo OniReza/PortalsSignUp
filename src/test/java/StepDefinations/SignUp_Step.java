@@ -5,22 +5,19 @@ import Utility.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
-
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
 import java.io.*;
 import java.util.concurrent.TimeUnit;
-
 import static Utility.Hooks.getDriver;
-
 
 public class SignUp_Step {
     public WebDriver driver;
     SignUp_Page signuppage;
     SmartWait smartWait = new SmartWait();
+
 
     public SignUp_Step() {
         this.driver = Hooks.getDriver();
@@ -51,16 +48,6 @@ public class SignUp_Step {
         signuppage.enterEmail();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-
-
-//    public void print() throws FileNotFoundException {
-//
-//        File file = new File("out.txt"); //Your file
-//        FileOutputStream fos = new FileOutputStream(file);
-//        PrintStream ps = new PrintStream(fos);
-//        System.setOut(ps);
-//        System.out.println("This goes to out.txt");
-//    }
 
 
     @When("user inputs email for non-us")
@@ -100,16 +87,16 @@ public class SignUp_Step {
         signuppage.checkBoxesclick();
     }
 
-    @When("user enters Email for non-us Accounts")
-    public void user_enters_email_non_us() throws Exception {
-        signuppage.enterEmailnon_us();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
+//    @When("user enters Email for non-us Accounts")
+//    public void user_enters_email_non_us() throws Exception {
+//        signuppage.enterEmailnon_us();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    }
 
     @And("Clicks Continue")
-    public void clicks_continue() throws InterruptedException {
+    public void clicks_continue() throws Exception {
         signuppage.continueBtnClick();
-        smartWait.waitUntilPageIsLoaded(5);
+       smartWait.waitUntilPageIsLoaded(5);
     }
 
     @And("user selects Country UK")

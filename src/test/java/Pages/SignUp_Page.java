@@ -111,6 +111,7 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void enterEmail() throws Exception {
         email.sendKeys(Random_data.signUpEmail());
+
     }
 
     public void enterEmailnon_us() throws Exception {

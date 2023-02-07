@@ -2,6 +2,8 @@ package Utility;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.sl.In;
+import org.openqa.selenium.remote.HttpSessionId;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -19,7 +21,6 @@ public class Random_data {
 
         String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
         System.out.println("Email:  " + email);
-
 
         String Data ="US: "+ email;
         File files = new File("Email/Email.txt");

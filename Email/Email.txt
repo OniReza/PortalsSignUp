@@ -15,3 +15,8 @@ US: clubswan_us_tst_clara@mailinator.com
 US: clubswan_us_tst_braulio@mailinator.com
 US: clubswan_us_tst_dorian@mailinator.com
 US: clubswan_us_tst_stone@mailinator.com
+
+Non US: debt_bd_tst_enid@mailinator.com
+Non US: debt_bd_tst_asia@mailinator.com
+Non US: debt_bd_tst_roderick@mailinator.com
+
