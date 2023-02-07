@@ -78,6 +78,8 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement iWantLiteBtn;
     @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[1]")
     public WebElement getPlan1;
+
+
     @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[2]")
     public WebElement getPlan2;
     @FindBy(xpath = "(//span[contains(text(),'Get') or contains(text(),'GET') ])[3]")

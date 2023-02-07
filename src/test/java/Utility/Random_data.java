@@ -5,12 +5,19 @@ import io.cucumber.java.sl.In;
 import org.openqa.selenium.remote.HttpSessionId;
 
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 public class Random_data {
 
     public static Faker faker = new Faker();
     public static String signUpEmail() throws Exception {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+
 
         Properties prop=new Properties();
         FileInputStream file;
@@ -20,7 +27,7 @@ public class Random_data {
         String TstUs=prop.getProperty("TstUsPrifix");
 
         String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
-        System.out.println("Email:  " + email);
+        System.out.println("Email:  " + email + "Date Time: " + dtf.format(now));
 
         String Data ="US: "+ email;
         File files = new File("Email/Email.txt");
@@ -36,6 +43,11 @@ public class Random_data {
 
     public static String signUpEmailnon_us() throws Exception  {
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+
+
         Properties prop=new Properties();
         FileInputStream file;
         file = new FileInputStream("./src/test/resources/config.properties");
@@ -44,10 +56,12 @@ public class Random_data {
         String TSTNon_us = prop.getProperty("TSTNon_usPrifix");
 
         String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-        System.out.println("Email:  " + email);
+        //System.out.println("Email:  " + email);
+        System.out.println("Email:  " + email + " " + dtf.format(now));
+        //System.out.println("Date Time: " + dtf.format(now));
 
 
-        String Data ="Non US: "+ email;
+        String Data ="Non US: "+ email + "  "+dtf.format(now);
         File files = new File("Email/Email.txt");
         FileWriter fw = new FileWriter(files,true);
         BufferedWriter bw = new BufferedWriter(fw);

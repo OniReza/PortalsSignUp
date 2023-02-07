@@ -231,7 +231,7 @@ public class SignUp_Step {
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSecondPlan();
-        Thread.sleep(8000);
+
     }
 
     @When("user selects third plan non-us")
