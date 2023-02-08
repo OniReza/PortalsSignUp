@@ -18,7 +18,6 @@ public class SignUp_Step {
     SignUp_Page signuppage;
     SmartWait smartWait = new SmartWait();
 
-
     public SignUp_Step() {
         this.driver = Hooks.getDriver();
         signuppage = new SignUp_Page(driver);
@@ -231,7 +230,6 @@ public class SignUp_Step {
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSecondPlan();
-
     }
 
     @When("user selects third plan non-us")
