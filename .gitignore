@@ -1,7 +1,3 @@
-
-/dir/
-src/
-/test/
-/java/
-/StepDefinations/
-/SignUp_Step.java/
+BasePortals.java/
+config.properties/
+extent.properties/
