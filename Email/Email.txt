@@ -31,3 +31,11 @@ Non US: debt_bd_tst_alvis@mailinator.com  2023/02/07 15:58:20
 Non US: debt_bd_tst_erna@mailinator.com  2023/02/07 16:14:56
 Non US: debt_bd_tst_paolo@mailinator.com  2023/02/07 16:26:53
 Non US: debt_bd_tst_gianni@mailinator.com  2023/02/07 16:31:28
+US: debt_non_us_tst_nola@mailinator.com
+US: debt_non_us_tst_adriel@mailinator.com
+US: debt_non_us_tst_lori@mailinator.com
+US: ardupay_us_tst_halle@mailinator.com
+US: ardupay_us_tst_leatha@mailinator.com
+US: aubit_us_tst_isadore@mailinator.com
+US: aubit_us_tst_modesta@mailinator.com
+Non US: ardu_bd_tst_harmony@mailinator.com  2023/02/09 16:48:57

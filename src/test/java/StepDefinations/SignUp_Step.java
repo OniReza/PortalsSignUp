@@ -118,6 +118,14 @@ public class SignUp_Step {
         Thread.sleep(3000);
     }
 
+    @And("user selects Standard plan")
+    public void user_selects_standard_plan() throws InterruptedException {
+        Thread.sleep(2000);
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.getFirstPlan();
+        Thread.sleep(3000);
+    }
+
     @When("user selects first plan")
     public void user_selects_first_plan() throws Exception {
         user_enters_email();
@@ -319,6 +327,13 @@ public class SignUp_Step {
         smartWait.waitUntilPageIsLoaded(5);
     }
 
+    @And("user clicks on subscribe button")
+    public void user_clicks_on_subscribe_button() throws InterruptedException {
+        smartWait.waitUntilPageIsLoaded(5);
+        signuppage.subscribeBtnClick();
+        smartWait.waitUntilPageIsLoaded(5);
+    }
+
     @And("user selects payment method card")
     public void user_selects_payment_method_card() throws InterruptedException {
         //signuppage = new SignUp_Page(driver);
@@ -333,12 +348,25 @@ public class SignUp_Step {
         smartWait.waitUntilPageIsLoaded(10);
     }
 
+    @And("checks payment confirmation message and clicks ok")
+    public void checks_payment_confirmation_message_and_clicks_ok() throws InterruptedException {
+        signuppage = new SignUp_Page(driver);
+        Assert.assertTrue("Payment Confirmation", signuppage.confirmatonCheck());
+        smartWait.waitUntilPageIsLoaded(10);
+        signuppage.okBtnClick();
+    }
+
     @Then("user press OK")
     public void user_press_ok() {
         signuppage = new SignUp_Page(driver);
         signuppage.okBtnClick();
         driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
         smartWait.waitUntilPageIsLoaded(5);
+    }
+    @Then("waiting for subscription should appear")
+    public void waiting_for_subscription_should_appear() {
+        smartWait.waitUntilPageIsLoaded(10);
+        Assert.assertTrue("Waiting Message Appeared", signuppage.waitMsgCheck());
     }
 
 

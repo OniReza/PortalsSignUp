@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Features/SignUp/SignUp.feature",glue = "StepDefinations",
-        tags="@starterlite",
+        tags="@ardupay",
         plugin ={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class SignupUsTestRunner {

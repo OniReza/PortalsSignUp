@@ -96,6 +96,8 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement getPlan8;
     @FindBy(xpath = "//*[@id=\"slide1\"]")
     public WebElement cardImage;
+    @FindBy(xpath = "//span[text()='SUBSCRIBE' or text()='subscribe' or text()='Subscribe']")
+    public WebElement subscribeBtn;
     @FindBy(xpath = "//div[@role='button' and text()='Select']")
     public WebElement paymentMthdDropdown;
     @FindBy(xpath = "//li[@role='option' and text()='Card']")
@@ -104,6 +106,8 @@ public class SignUp_Page extends CommonPageMethods {
     public WebElement okBtn;
     @FindBy(xpath = "//span[text()='Payment Confirmation']")
     public WebElement paymentConfirmation;
+    @FindBy (xpath = "//button[text()='Waiting for subscription confirmation']")
+    public WebElement waitingMsg;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div/div/div/div/div/div[5]/div/button")
     public WebElement cnt;
 
@@ -289,6 +293,10 @@ public class SignUp_Page extends CommonPageMethods {
         return cardImage.isDisplayed();
     }
 
+    public void subscribeBtnClick(){
+        subscribeBtn.click();
+    }
+
     public void cardPayment() throws InterruptedException {
         paymentMthdDropdown.click();
         Thread.sleep(1000);
@@ -308,6 +316,10 @@ public class SignUp_Page extends CommonPageMethods {
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.sendKeys(Keys.ARROW_DOWN);
         cnt.click();
+    }
+
+    public boolean waitMsgCheck() {
+       return waitingMsg.isDisplayed();
     }
 
 }
