@@ -12,6 +12,8 @@ import java.io.*;
 public class SignUp_Page extends CommonPageMethods {
 
     public static WebDriver driver;
+
+    public static String email_non;
     @FindBy(xpath = "//input[@id='email']")
     public WebElement email;
     @FindBy(xpath = "//div[@id=\"mui-component-select-country\"]")
@@ -72,6 +74,17 @@ public class SignUp_Page extends CommonPageMethods {
     //Plans For Clubswan us, non-us
     @FindBy(xpath = "(//*[local-name()='svg' and @class='MuiSvgIcon-root MuiSvgIcon-fontSizeLarge'])[2]")
     public WebElement carosol;
+
+
+    //html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[3]
+
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[3]")
+    public WebElement carosol3;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[3]")
+    public WebElement carosol4;
+
     @FindBy(xpath = "//span[contains(text(),'Get Lite')]")
     public WebElement getLiteBtn;
     @FindBy(xpath = "//span[contains(text(),'I want starter lite')]")
@@ -122,7 +135,11 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void enterEmailnon_us() throws Exception {
         email.sendKeys(Random_data.signUpEmailnon_us());
+
     }
+
+
+
 
     public void continueBtnClick() {
         continueBtn.click();
@@ -211,8 +228,11 @@ public class SignUp_Page extends CommonPageMethods {
 
     }
 
-    public void scrollbtn() {
+    public void scrollbtn()throws InterruptedException {
         carosol.click();
+        Thread.sleep(1000);
+
+
     }
 
     public void getGetStarterLite() throws InterruptedException {
@@ -223,7 +243,12 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void getFirstPlan() {
         getPlan1.click();
+
     }
+
+//    public void getFirstPlanName(){
+//        getPlan1.getText();
+//    }
 
     public void getSecondPlan() throws IOException {
         getPlan2.click();
@@ -265,6 +290,8 @@ public class SignUp_Page extends CommonPageMethods {
 
     public void getSeventhPlan() {
         try {
+            scrollbtn();
+            scrollbtn();
             scrollbtn();
             Thread.sleep(1000);
             getPlan7.click();

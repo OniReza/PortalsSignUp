@@ -12,12 +12,9 @@ import java.util.Properties;
 public class Random_data {
 
     public static Faker faker = new Faker();
+    public static String email;
+
     public static String signUpEmail() throws Exception {
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
-
 
         Properties prop=new Properties();
         FileInputStream file;
@@ -27,25 +24,12 @@ public class Random_data {
         String TstUs=prop.getProperty("TstUsPrifix");
 
         String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
-        System.out.println("Email:  " + email + "Date Time: " + dtf.format(now));
-
-        String Data ="US: "+ email;
-        File files = new File("Email/Email.txt");
-        FileWriter fw = new FileWriter(files,true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(Data);
-        bw.newLine();
-        bw.close();
 
         return email;
 
     }
 
     public static String signUpEmailnon_us() throws Exception  {
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
 
 
         Properties prop=new Properties();
@@ -54,23 +38,17 @@ public class Random_data {
 
         prop.load(file);
         String TSTNon_us = prop.getProperty("TSTNon_usPrifix");
-
-        String email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
-        //System.out.println("Email:  " + email);
-        System.out.println("Email:  " + email + " " + dtf.format(now));
-        //System.out.println("Date Time: " + dtf.format(now));
-
-
-        String Data ="Non US: "+ email + "  "+dtf.format(now);
-        File files = new File("Email/Email.txt");
-        FileWriter fw = new FileWriter(files,true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(Data);
-        bw.newLine();
-        bw.close();
-
+         email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
         return email;
     }
+
+    public static String emailNon_us_log() throws Exception {
+
+        String emailnon=email;
+        return emailnon;
+
+    }
+
 
     public static String firstName()  {
         String fName = faker.name().firstName().replaceAll("'", "");

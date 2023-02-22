@@ -13,6 +13,9 @@ public class BaseData {
         return URL;
     }
 
+
+
+
     public static String BasePopUpUrl()
     {
         String PortalDev= BasePortals.portalsDEV();

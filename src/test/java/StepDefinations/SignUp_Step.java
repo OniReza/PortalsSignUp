@@ -6,17 +6,22 @@ import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 import static Utility.Hooks.getDriver;
 
 public class SignUp_Step {
     public WebDriver driver;
     SignUp_Page signuppage;
+    Random_data random_data = new Random_data();
     SmartWait smartWait = new SmartWait();
+    public static String emailnonus;
 
     public SignUp_Step() {
         this.driver = Hooks.getDriver();
@@ -53,6 +58,9 @@ public class SignUp_Step {
     public void user_inputs_email_non_us() throws Exception, IOException {
         signuppage.enterEmailnon_us();
         Thread.sleep(4000);
+
+
+
     }
 
     @When("user inputs email for non-us member details and clicks continue")
@@ -96,6 +104,8 @@ public class SignUp_Step {
     public void clicks_continue() throws Exception {
         signuppage.continueBtnClick();
        smartWait.waitUntilPageIsLoaded(5);
+
+
     }
 
     @And("user selects Country UK")
@@ -104,7 +114,8 @@ public class SignUp_Step {
     }
 
     @And("Subscription page will appear")
-    public void subscription_page_will_appear() throws InterruptedException {
+    public void subscription_page_will_appear() throws Exception {
+        writeEmail();
         Thread.sleep(5000);
         Assert.assertTrue("Subscription page not appeared", signuppage.subscriptionPageCheck());
 
@@ -116,6 +127,7 @@ public class SignUp_Step {
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getGetStarterLite();
         Thread.sleep(3000);
+
     }
 
     @And("user selects Standard plan")
@@ -188,6 +200,7 @@ public class SignUp_Step {
 
     @When("user selects sixth plan")
     public void user_selects_sixth_plan() throws Exception {
+
         user_enters_email();
         signuppage.continueBtnClick();
         user_inputs_personal_details();
@@ -235,6 +248,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSecondPlan();
@@ -246,6 +260,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(10);
         signuppage.getThirdPlan();
@@ -323,7 +338,16 @@ public class SignUp_Step {
     @And("Clicks Continue again")
     public void clicks_continue_again() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(5);
-        signuppage.cntc();
+
+        try{
+            signuppage.cntc();
+        }
+
+        catch (NoSuchElementException e)
+        {
+            System.out.println("No card selection page");
+        }
+
         smartWait.waitUntilPageIsLoaded(5);
     }
 
@@ -364,10 +388,37 @@ public class SignUp_Step {
         smartWait.waitUntilPageIsLoaded(5);
     }
     @Then("waiting for subscription should appear")
-    public void waiting_for_subscription_should_appear() {
+    public void waiting_for_subscription_should_appear() throws Exception {
         smartWait.waitUntilPageIsLoaded(10);
         Assert.assertTrue("Waiting Message Appeared", signuppage.waitMsgCheck());
+
+
     }
+
+ public void writeEmail() throws Exception {
+
+     emailnonus=Random_data.emailNon_us_log();
+
+     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+     LocalDateTime now = LocalDateTime.now();
+     System.out.println(dtf.format(now));
+
+
+     //System.out.println("Email:  " + email);
+     System.out.println("Email:  " + emailnonus + " " + dtf.format(now));
+     //System.out.println("Date Time: " + dtf.format(now));
+
+
+     String Data ="Non US: "+ emailnonus + "  "+dtf.format(now);
+     File files = new File("Email/Email.txt");
+     FileWriter fw = new FileWriter(files,true);
+     BufferedWriter bw = new BufferedWriter(fw);
+     bw.write(Data);
+     bw.newLine();
+     bw.close();
+
+
+ }
 
 
 }

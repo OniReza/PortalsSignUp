@@ -23,7 +23,6 @@ public class AutomationBase {
 
     private static String strApiGateway = System.getProperty("apiGateway", "stg");
 
-
     public static void instantiateWebDriverObjects() {
 
             driverThread = ThreadLocal.withInitial(() -> {

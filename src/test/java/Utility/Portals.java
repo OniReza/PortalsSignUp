@@ -141,7 +141,15 @@ public class Portals {
             return url;
         }
 
-        //
+        public String blockchain(){
+            String url="dev.bcfclubmembers.com/";
+            return url;
+        }
+
+        public String nexusprime(){
+            String url="dev.nexusprimemembers.com";
+            return url;
+        }
     }
 
     public static class tst {
@@ -283,7 +291,15 @@ public class Portals {
             return url;
         }
 
+        public String blockchain(){
+            String url="sandbox.bcfclubmembers.com/";
+            return url;
+        }
 
+        public String nexusprime(){
+            String url="sandbox.nexusprimemembers.com";
+            return url;
+        }
 
     }
 }
