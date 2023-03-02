@@ -231,6 +231,7 @@ public class SignUp_Page extends CommonPageMethods {
     public void scrollbtn()throws InterruptedException {
         carosol.click();
         Thread.sleep(1000);
+        carosol.click();
 
 
     }

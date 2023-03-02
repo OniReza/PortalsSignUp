@@ -3,6 +3,9 @@ package StepDefinations;
 import Pages.SignUp_Page;
 import Utility.*;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
+
+
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -10,6 +13,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import javax.swing.text.StyledEditorKit;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -22,10 +27,21 @@ public class SignUp_Step {
     Random_data random_data = new Random_data();
     SmartWait smartWait = new SmartWait();
     public static String emailnonus;
+    //public static String emailus;
+    private Scenario scenario;
+
+    public static String Data2;
+
+
 
     public SignUp_Step() {
         this.driver = Hooks.getDriver();
         signuppage = new SignUp_Page(driver);
+    }
+
+    @Before
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
     }
 
     @After(order = 1)
@@ -103,7 +119,9 @@ public class SignUp_Step {
     @And("Clicks Continue")
     public void clicks_continue() throws Exception {
         signuppage.continueBtnClick();
+
        smartWait.waitUntilPageIsLoaded(5);
+
 
 
     }
@@ -115,9 +133,10 @@ public class SignUp_Step {
 
     @And("Subscription page will appear")
     public void subscription_page_will_appear() throws Exception {
-        writeEmail();
+
         Thread.sleep(5000);
         Assert.assertTrue("Subscription page not appeared", signuppage.subscriptionPageCheck());
+
 
     }
 
@@ -144,6 +163,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getFirstPlan();
@@ -157,6 +177,7 @@ public class SignUp_Step {
         user_inputs_personal_details();
         subscription_page_will_appear();
         clicks_continue();
+        writeEmail();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSecondPlan();
         Thread.sleep(8000);
@@ -168,6 +189,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getThirdPlan();
@@ -180,6 +202,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getFourthPlan();
@@ -192,6 +215,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getFifthPlan();
@@ -205,6 +229,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSixthPlan();
@@ -217,6 +242,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSeventhPlan();
@@ -229,6 +255,7 @@ public class SignUp_Step {
         signuppage.continueBtnClick();
         user_inputs_personal_details();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getEighthPlan();
@@ -237,9 +264,11 @@ public class SignUp_Step {
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++Non US++++++++++++++++++++++++++++++++++++++++++++++++
     @When("user selects first plan non-us")
-    public void user_selects_first_plan_non_us() throws InterruptedException {
+    public void user_selects_first_plan_non_us() throws Exception {
         signuppage.getFirstPlan();
         smartWait.waitUntilPageIsLoaded(5);
+        writeEmail();
+
     }
 
     @When("user selects second plan non-us")
@@ -274,6 +303,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getFourthPlan();
@@ -286,6 +316,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getFifthPlan();
@@ -298,6 +329,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSixthPlan();
@@ -310,6 +342,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getSeventhPlan();
@@ -322,6 +355,7 @@ public class SignUp_Step {
         clicks_continue();
         user_inputs_personal_details_for_non_us_members();
         clicks_continue();
+        writeEmail();
         subscription_page_will_appear();
         smartWait.waitUntilPageIsLoaded(5);
         signuppage.getEighthPlan();
@@ -391,34 +425,38 @@ public class SignUp_Step {
     public void waiting_for_subscription_should_appear() throws Exception {
         smartWait.waitUntilPageIsLoaded(10);
         Assert.assertTrue("Waiting Message Appeared", signuppage.waitMsgCheck());
-
+        Thread.sleep(2000);
+         writeInReport();
 
     }
 
  public void writeEmail() throws Exception {
 
-     emailnonus=Random_data.emailNon_us_log();
+     emailnonus=Random_data.email_log();
+
 
      DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
      LocalDateTime now = LocalDateTime.now();
      System.out.println(dtf.format(now));
 
-
-     //System.out.println("Email:  " + email);
      System.out.println("Email:  " + emailnonus + " " + dtf.format(now));
-     //System.out.println("Date Time: " + dtf.format(now));
 
+     String Data ="Email : "+ emailnonus + "  "+dtf.format(now);
+     Data2= "Email : "+ emailnonus ;
 
-     String Data ="Non US: "+ emailnonus + "  "+dtf.format(now);
      File files = new File("Email/Email.txt");
      FileWriter fw = new FileWriter(files,true);
      BufferedWriter bw = new BufferedWriter(fw);
      bw.write(Data);
      bw.newLine();
      bw.close();
-
-
  }
 
+ public void writeInReport()
+ {
+     String consoleOutput = Data2;
+     System.out.println(consoleOutput);
+     scenario.log(consoleOutput);
+ }
 
 }

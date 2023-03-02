@@ -14,40 +14,55 @@ public class Random_data {
     public static Faker faker = new Faker();
     public static String email;
 
-    public static String signUpEmail() throws Exception {
+    public static String signUpEmail(){
 
-        Properties prop=new Properties();
-        FileInputStream file;
-        file = new FileInputStream("./src/test/resources/config.properties");
+        Portals.dev dev = new Portals.dev();
+        Portals.tst tst = new Portals.tst();
 
-        prop.load(file);
-        String TstUs=prop.getProperty("TstUsPrifix");
 
-        String email = TstUs + firstName().trim().toLowerCase() + "@mailinator.com";
+        String PortalEmail=dev.clubswan();
 
+
+        int start = PortalEmail.indexOf('.');
+        int end = PortalEmail.lastIndexOf('.');
+
+        String outStr = PortalEmail.substring(start+1, end);
+        System.out.println(outStr);
+
+         email = "Us_"+ outStr + "_" + firstName().trim().toLowerCase() + "@mailinator.com";
         return email;
 
     }
 
     public static String signUpEmailnon_us() throws Exception  {
 
+        Portals.dev dev = new Portals.dev();
+        Portals.tst tst = new Portals.tst();
 
-        Properties prop=new Properties();
-        FileInputStream file;
-        file = new FileInputStream("./src/test/resources/config.properties");
 
-        prop.load(file);
-        String TSTNon_us = prop.getProperty("TSTNon_usPrifix");
-         email = TSTNon_us + firstName().trim().toLowerCase() + "@mailinator.com";
+        String PortalEmail=dev.clubswan();
+
+
+        int start = PortalEmail.indexOf('.');
+        int end = PortalEmail.lastIndexOf('.');
+
+        String outStr = PortalEmail.substring(start+1, end);
+        System.out.println(outStr);
+
+         email = "Non_"+ outStr + "_" + firstName().trim().toLowerCase() + "@mailinator.com";
         return email;
+
     }
 
-    public static String emailNon_us_log() throws Exception {
+    public static String email_log(){
 
         String emailnon=email;
         return emailnon;
 
     }
+
+
+
 
 
     public static String firstName()  {
@@ -81,8 +96,6 @@ public class Random_data {
         String bRegNum = Integer.toString(Num);
         return bRegNum;
     }
-
-
     public static String address() {
         String streetAddress = faker.address().streetAddress();
         return streetAddress;
