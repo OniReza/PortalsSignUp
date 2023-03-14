@@ -2,16 +2,11 @@ package Utility;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
 
-import static org.openqa.selenium.OutputType.BYTES;
+
 
 public class Hooks {
     private static WebDriver driver;
@@ -34,11 +29,11 @@ public class Hooks {
         return driver;
     }
 
-    @After
-    public void tearDown()
-    {
-        driver.quit();
-        driver.close();
-    }
+//    @After
+//    public void tearDown()
+//    {
+//        driver.quit();
+//        driver.close();
+//    }
 
 }

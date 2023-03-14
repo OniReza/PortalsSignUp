@@ -3,6 +3,7 @@ package StepDefinations;
 import Pages.SignUp_Page;
 import Utility.*;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 
 
@@ -31,8 +32,6 @@ public class SignUp_Step {
     private Scenario scenario;
 
     public static String Data2;
-
-
 
     public SignUp_Step() {
         this.driver = Hooks.getDriver();
@@ -458,5 +457,10 @@ public class SignUp_Step {
      System.out.println(consoleOutput);
      scenario.log(consoleOutput);
  }
+
+    @After()
+    public void closeBrowser() {
+        driver.quit();
+    }
 
 }

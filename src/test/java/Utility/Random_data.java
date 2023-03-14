@@ -20,7 +20,7 @@ public class Random_data {
         Portals.tst tst = new Portals.tst();
 
 
-        String PortalEmail=dev.clubswan();
+        String PortalEmail=tst.clubswan();
 
 
         int start = PortalEmail.indexOf('.');
@@ -40,7 +40,7 @@ public class Random_data {
         Portals.tst tst = new Portals.tst();
 
 
-        String PortalEmail=dev.clubswan();
+        String PortalEmail=tst.infinity();
 
 
         int start = PortalEmail.indexOf('.');
