@@ -74,8 +74,6 @@ public class SignUp_Step {
         signuppage.enterEmailnon_us();
         Thread.sleep(4000);
 
-
-
     }
 
     @When("user inputs email for non-us member details and clicks continue")

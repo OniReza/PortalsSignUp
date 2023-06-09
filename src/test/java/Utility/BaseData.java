@@ -14,8 +14,6 @@ public class BaseData {
     }
 
 
-
-
     public static String BasePopUpUrl()
     {
         String PortalDev= BasePortals.portalsTST();
