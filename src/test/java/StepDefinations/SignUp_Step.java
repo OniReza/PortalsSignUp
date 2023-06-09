@@ -456,9 +456,5 @@ public class SignUp_Step {
      scenario.log(consoleOutput);
  }
 
-    @After()
-    public void closeBrowser() {
-        driver.quit();
-    }
 
 }
