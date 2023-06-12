@@ -117,7 +117,7 @@ public class SignUp_Step {
     public void clicks_continue() throws Exception {
         signuppage.continueBtnClick();
 
-       smartWait.waitUntilPageIsLoaded(5);
+       Thread.sleep(10000);
 
 
 
