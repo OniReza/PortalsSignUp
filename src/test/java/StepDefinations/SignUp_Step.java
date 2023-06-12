@@ -456,5 +456,4 @@ public class SignUp_Step {
      scenario.log(consoleOutput);
  }
 
-
 }
